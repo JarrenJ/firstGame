@@ -1,0 +1,4 @@
+Frightened by your recent encounter with a bandit,
+you flee to a nearby forest. You have to make a decision...
+[1] Path 1
+[2] Path 2
