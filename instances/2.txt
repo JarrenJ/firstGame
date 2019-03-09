@@ -1,0 +1,7 @@
+You get halfway through the forest
+and decide to setup camp.
+You find a cave and decide to rest.
+[HINT] »» You can perform all commands
+[HINT] »» you already know by typing
+[HINT] »» in the command: '/rest'.
+[HINT] »» (Will run - /stats and /i).

@@ -11,37 +11,37 @@ package firstGame;
  */
 import java.util.*;
 public class Dice {
-    private final Random random = new Random();
+    private static final Random random = new Random();
 
-    public int roll(int max){
-        return 1 + random.nextInt(max);
+    public static int roll(int max){
+         return 1 + random.nextInt(max);
     }
 
-    public int d4(){
-        return roll(4);
+    public static void d4(){
+        roll(4);
     }
 
-    public int d6(){
-        return roll(6);
+    public static void d6(){
+        roll(6);
     }
 
-    public int d8(){
-        return roll(8);
+    public static void d8(){
+         roll(8);
     }
 
-    public int d10(){
-        return roll(10);
+    public static void d10(){
+         roll(10);
     }
 
-    public int d12(){
-        return roll(12);
+    public static void d12(){
+         roll(12);
     }
 
-    public int d20(){
-        return roll(20);
+    public static void d20(){
+         roll(20);
     }
 
-    public int d100(){
-        return roll(100);
+    public static void d100(){
+         roll(100);
     }
 }

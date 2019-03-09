@@ -14,11 +14,12 @@ import java.util.*;
  * @author jarrenj
  */
 public class loadInstance {
-    public static int instanceLevel;
-    public static String line;
+    private static int instanceLevel;
+    private static String line;
+    private static String restLevel;
 
     public static void instance(int instanceLevel) throws FileNotFoundException, InterruptedException{
-        File f = new File("instances/"+Integer.toString(instanceLevel)+".txt");
+        File f = new File("instances/"+instanceLevel+".txt");
         Scanner readingFile = new Scanner(f);
         switch(instanceLevel){
             case 1:
@@ -27,6 +28,24 @@ public class loadInstance {
                     Thread.sleep(3000);
                     System.out.println(line);
                 }
+                readingFile.close();
+                break;
+            case 2:
+                while(readingFile.hasNext()) {
+                    line = readingFile.nextLine();
+                    Thread.sleep(3000);
+                    System.out.println(line);
+                }
+                readingFile.close();
+                break;
+        }
+    }
+
+    public static void rest(int restLevel){
+        switch(restLevel){
+            case 1:
+                Character.stats();
+                //also prints current inventory to screen
         }
     }
 }

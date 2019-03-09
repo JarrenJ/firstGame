@@ -10,6 +10,7 @@ package firstGame;
  * @author jarrenj
  */
 import static firstGame.Character.*;
+
 import java.io.FileNotFoundException;
 import java.util.*;
 public class firstGame {
@@ -45,16 +46,15 @@ public class firstGame {
         String input = "";
         String name = "";
         String playerClass = "";
-        ArrayList<String> races = new ArrayList();
+        ArrayList<String> races = new ArrayList<>();
         races.add("Archer");
         races.add("Sorcerer");
         races.add("Barbarian");
         System.out.println("Please select which race you would like to be:");
-
         for (int i = 0; i < races.size(); i++) {
             System.out.println("[" + i + "]" + races.get(i));
         }
-
+        System.out.print("» ");
         raceSelection = stdin.nextInt();
         switch(raceSelection){
             case 0:
@@ -95,7 +95,7 @@ public class firstGame {
         input = stdin.next();
         name = name(input);
         System.out.printf("Oh yes, I remember now, it's %s", name);
-        System.out.println("");
+        System.out.println();
         boolean game = true;
         while(game){
             System.out.println("Started the game");
@@ -127,15 +127,32 @@ public class firstGame {
                 }
             }
             inventory.remove(gold1);
+            System.out.println();
             loadInstance.instance(1);
             do {
                 System.out.print("» ");
                 input = stdin.next();
                 if (input.equals("1")) {
-                    System.out.println("You choose Path 1");
-                } else System.out.println("You chose Path 2");
-            } while (!input.equals("1") || !input.equals(2));
-
+                    System.out.println("You chose Path 1");
+                    break;
+                } else if (input.equals("2")) {
+                    System.out.println("You chose Path 2");
+                    System.out.println("You were annihilated by a ferocious bear!");
+                    System.exit(0);
+                }
+            } while (true);
+            loadInstance.instance(2);
+            do {
+                System.out.print("» ");
+                input = stdin.next();
+            }while(!input.equals("/rest"));
+            loadInstance.rest(1);
+            System.out.println();
+            System.out.println("-----[ Inventory ]-----");
+            for (Item i : inventory) {
+                System.out.println(i.toString());
+            }
+            System.out.println("-----[ Inventory ]-----");
             game = false;
         }
         System.out.println("\nCongratz! You beat the game!");
@@ -143,11 +160,11 @@ public class firstGame {
 
     public static void encounter(int eLevel){
         String action;
-        String spellAction = null;
+        String spellAction = null; // set to null as I have not yet implemented spell attacks
         System.out.println("An enemy approcahes");
         createEnemy(eLevel); //creates a level 1 enemy
         combat = true;
-        while(combat == true){
+        while(combat){
             System.out.println("Press 'a' to use a melee attack.\n\nPress 'r' to use a ranged attack. *(Remember - some races dont have a ranged attck\nbe sure to check if your race does.");
             if (race.equals("Sorcerer")) {
                 System.out.println("Type 'spells' for a list of spells.");
@@ -155,11 +172,11 @@ public class firstGame {
             System.out.print("» ");
             action = input.next();
             if (action.charAt(0) == 'a') {
-                combat = attack();
+                combat = attack(false);
             }else if (action.charAt(0) == 'r') {
-                combat = attackRange();
+                combat = attack(true);
             }
-                if (combat == false) {
+                if (!combat) {
                     switch(level){
                         case 1:
                             xp = xp + 3;

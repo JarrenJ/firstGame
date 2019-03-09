@@ -23,6 +23,7 @@ public class Character {
     public static int enemyMaxHp;
     public static int enemyMeleeDmg;
     public static int enemyRangeDmg;
+    public static int damage;
     public static int level;
     public static int enemyLevel;
     public static String race;
@@ -80,18 +81,25 @@ public class Character {
             }
     }
 
-    public static boolean attack() {
+    public static boolean attack(Boolean ranged) {
+        //set boolean 'ranged' to true if using ranged attack
         System.out.println("You hit!");
-        enemyHp = enemyHp - playerMeleeDmg;
-        if(enemyHp <= 0){
+        if (ranged) {
+            enemyHp = enemyHp - playerRangeDmg;
+            damage = playerRangeDmg;
+        } else {
+            enemyHp = enemyHp - playerMeleeDmg;
+            damage = playerMeleeDmg;
+        }
+        if (enemyHp <= 0) {
             System.out.println("You Won!");
             return false;
-        }else{
-            System.out.println("You dealt " + playerMeleeDmg + " damage!\nThe enemy has " + enemyHp +  " health left \nGet back in there and fight!");
+        } else {
+            System.out.println("You dealt " + damage + " damage!\nThe enemy has " + enemyHp + " health left \nGet back in there and fight!");
         }
         return true;
-    }
-
+        }
+    /*
     public static boolean attackRange() {
         System.out.println("You hit!");
         enemyHp = enemyHp - playerRangeDmg;
@@ -103,7 +111,7 @@ public class Character {
         }
         return true;
     }
-
+    */
     public static void checkLevelUp(){
         if (xp > 10) {
             level = 2;
