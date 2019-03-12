@@ -18,27 +18,19 @@ public class firstGame {
     /**
      * @param args the command line arguments
      */
+
+    public static ItemCollection<Item> itemCollection;
+
     public static void main(String[] args) throws FileNotFoundException, InterruptedException{
-        class Item {
-            public String toString() {
-                return "I am the base class for all items";
-            }
-        }
+        itemCollection = new ItemCollection<Item>();
+        int defaultValue = 25;
+        Item L_boots = new Item(0, "Leather Boots", 0, "Leather");
+        Item L_leggings = new Item(1, "Leather Leggings", 0, "Leather");
+        Item L_chestplate = new Item(2, "Leather Chestplate", 0, "Leather");
+        Item L_helmet = new Item(3, "Leather Helmet", 0, "Leather");
+        Item W_sword = new Item(4, "Wooden Sword", 5, "Wood");
+        Item W_bow = new Item(5, "Wooden Bow", 0, "Wood");
 
-        class BasicSword extends Item {
-            public String toString() {
-                return "Basic Sword » Dmg: 5";
-            }
-        }
-
-        class Gold extends Item {
-            public String toString() {
-                return "Gold » 10";
-            }
-        }
-        ArrayList<Item> inventory = new ArrayList<>();
-        BasicSword sword1 = new BasicSword();
-        Gold gold1 = new Gold();
         Scanner stdin = new Scanner(System.in);
         Dice roll = new Dice();
         int raceSelection;
@@ -56,6 +48,7 @@ public class firstGame {
         }
         System.out.print("» ");
         raceSelection = stdin.nextInt();
+
         switch(raceSelection){
             case 0:
                 createArcher();
@@ -79,16 +72,6 @@ public class firstGame {
         } while (input.compareTo("/stats") != 0);
         stats();
 
-        do {
-            System.out.println("\nEnter the command '/i'.");
-            System.out.print("» ");
-            input = stdin.next();
-        } while (input.compareTo("/i") != 0);
-
-        for (Item i : inventory) {
-            System.out.println(i.toString());
-        }
-
         System.out.println("\nYou can use other commands to help you on your journey.\nThese can be found by typing in '/help'.\n");
         System.out.print("Good morning sir ...  Kastle\nhm, I'm sorry but I seem to have forgotten your first name all of a sudden\ncould you remind me of it again?\n");
         System.out.print("» ");
@@ -96,9 +79,9 @@ public class firstGame {
         name = name(input);
         System.out.printf("Oh yes, I remember now, it's %s", name);
         System.out.println();
+
         boolean game = true;
         while(game){
-            System.out.println("Started the game");
             //first encounter - use '1' to create a level 1 enemy
             encounter(1);
             System.out.println("Servant »» Great fight " + name + "!\nHere are your current stats!");
@@ -111,24 +94,13 @@ public class firstGame {
                 input = stdin.next();
             } while (!input.equals("/check"));
 
-            System.out.println("[LOOT] »» You found a basic sword and 10 gold!");
-            inventory.add(sword1);
-            inventory.add(gold1);
-            //for loop to show current inventory
-            System.out.println("-----[ Inventory ]-----");
-            for (Item i : inventory) {
-                System.out.println(i.toString());
-            }
-            System.out.println("-----[ Inventory ]-----");
-            for (Item i : inventory) {
-                if (i == gold1) {
-                    gold += 10; //10 is the amount of 'gold1'
-                    System.out.printf("[BALANCE] »» %.2f", gold);
-                }
-            }
-            inventory.remove(gold1);
+            System.out.println("[LOOT] »» You found a wooden sword and a wooden bow!");
+            itemCollection.add(W_sword);
+            itemCollection.add(W_bow);
+            printInventory();
             System.out.println();
             loadInstance.instance(1);
+
             do {
                 System.out.print("» ");
                 input = stdin.next();
@@ -141,21 +113,27 @@ public class firstGame {
                     System.exit(0);
                 }
             } while (true);
+
             loadInstance.instance(2);
+
             do {
                 System.out.print("» ");
                 input = stdin.next();
             }while(!input.equals("/rest"));
             loadInstance.rest(1);
             System.out.println();
-            System.out.println("-----[ Inventory ]-----");
-            for (Item i : inventory) {
-                System.out.println(i.toString());
-            }
-            System.out.println("-----[ Inventory ]-----");
+            printInventory();
             game = false;
         }
         System.out.println("\nCongratz! You beat the game!");
+    }
+
+    public static void printInventory(){
+        System.out.println("-----[ Inventory ]-----");
+        for (Item Item : itemCollection) {
+            System.out.println(Item);
+        }
+        System.out.println("-----[ Inventory ]-----");
     }
 
     public static void encounter(int eLevel){

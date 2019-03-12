@@ -25,7 +25,7 @@ public class loadInstance {
             case 1:
                 while(readingFile.hasNext()) {
                     line = readingFile.nextLine();
-                    Thread.sleep(3000);
+                    Thread.sleep(1000);
                     System.out.println(line);
                 }
                 readingFile.close();
@@ -33,7 +33,7 @@ public class loadInstance {
             case 2:
                 while(readingFile.hasNext()) {
                     line = readingFile.nextLine();
-                    Thread.sleep(3000);
+                    Thread.sleep(1000);
                     System.out.println(line);
                 }
                 readingFile.close();
