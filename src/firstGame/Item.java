@@ -2,13 +2,13 @@ package firstGame;
 
 public class Item extends Object {
     private int ID;
-    String name;
+    private String name;
     private double damage;
     private String type;
 
     public Item(int itemID, String itemName, double itemDamage, String itemType){
         ID = itemID;
-        name = itemName;
+        name = itemType + " " + itemName;
         damage = itemDamage;
         type = itemType;
     }
@@ -17,8 +17,9 @@ public class Item extends Object {
         ID = newID;
     }
 
-    public void setName(String newName){
-        name = newName;
+    public void updateName(){
+        name = "";
+        name = type + " " + name;
     }
 
     public void setDamage(double newDamage){

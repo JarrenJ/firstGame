@@ -40,12 +40,4 @@ public class loadInstance {
                 break;
         }
     }
-
-    public static void rest(int restLevel){
-        switch(restLevel){
-            case 1:
-                Character.stats();
-                //also prints current inventory to screen
-        }
-    }
 }

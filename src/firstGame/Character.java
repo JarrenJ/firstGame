@@ -81,7 +81,7 @@ public class Character {
             }
     }
 
-    public static boolean attack(Boolean ranged) {
+    public static boolean attack(Boolean ranged){
         //set boolean 'ranged' to true if using ranged attack
         System.out.println("You hit!");
         if (ranged) {
@@ -99,19 +99,29 @@ public class Character {
         }
         return true;
         }
-    /*
-    public static boolean attackRange() {
-        System.out.println("You hit!");
-        enemyHp = enemyHp - playerRangeDmg;
-        if(enemyHp <= 0){
+
+    public static boolean spellAttack(int spellDamage) throws InterruptedException{
+        if (mana >= 0){
+            mana = mana - 5;
+            System.out.println("Rolling a D4 to determine Fireball Damage...");
+            Thread.sleep(1000);
+            enemyHp = enemyHp - spellDamage;
+            damage = spellDamage;
+        }
+        if (enemyHp <= 0) {
             System.out.println("You Won!");
             return false;
-        }else{
-            System.out.println("You dealt " + playerRangeDmg + " damage!\nThe enemy has " + enemyHp +  " health left \nGet back in there and fight!");
+        } else {
+            System.out.println("You dealt " + damage + " damage!\nThe enemy has " + enemyHp + " health left \nGet back in there and fight!");
         }
         return true;
     }
-    */
+
+
+    public static void addXp(int xpAdd){
+        xp += xpAdd;
+    }
+
     public static void checkLevelUp(){
         if (xp > 10) {
             level = 2;

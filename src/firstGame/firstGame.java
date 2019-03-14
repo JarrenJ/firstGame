@@ -23,16 +23,17 @@ public class firstGame {
 
     public static void main(String[] args) throws FileNotFoundException, InterruptedException{
         itemCollection = new ItemCollection<Item>();
-        int defaultValue = 25;
-        Item L_boots = new Item(0, "Leather Boots", 0, "Leather");
-        Item L_leggings = new Item(1, "Leather Leggings", 0, "Leather");
-        Item L_chestplate = new Item(2, "Leather Chestplate", 0, "Leather");
-        Item L_helmet = new Item(3, "Leather Helmet", 0, "Leather");
-        Item W_sword = new Item(4, "Wooden Sword", 5, "Wood");
-        Item W_bow = new Item(5, "Wooden Bow", 0, "Wood");
+        Item boots = new Item(0, "Boots", 0, "Leather");
+        Item leggings = new Item(1, "Leggings", 0, "Leather");
+        Item chestplate = new Item(2, "Chestplate", 0, "Leather");
+        Item helmet = new Item(3, "Helmet", 0, "Leather");
+        Item sword = new Item(4, "Sword", 5, "Wood");
+        Item bow = new Item(5, "Bow", 0, "Wood");
 
         Scanner stdin = new Scanner(System.in);
+
         Dice roll = new Dice();
+
         int raceSelection;
         double gold = 0.0;
         String input = "";
@@ -95,8 +96,8 @@ public class firstGame {
             } while (!input.equals("/check"));
 
             System.out.println("[LOOT] »» You found a wooden sword and a wooden bow!");
-            itemCollection.add(W_sword);
-            itemCollection.add(W_bow);
+            itemCollection.add(sword);
+            itemCollection.add(bow);
             printInventory();
             System.out.println();
             loadInstance.instance(1);
@@ -120,8 +121,19 @@ public class firstGame {
                 System.out.print("» ");
                 input = stdin.next();
             }while(!input.equals("/rest"));
-            loadInstance.rest(1);
             System.out.println();
+            System.out.println("You haven't slept this well in a long time. You wake up and something happens...");
+            Thread.sleep(1000);
+            Character.addXp(7);
+            System.out.println("You leveled up!");
+            Character.checkLevelUp();
+            System.out.println("Your wooden sword was upgraded to an Iron sword!");
+            /*
+            sword.setType("Iron");
+            String itemName = sword.getName();
+            itemName.split(" ");
+            sword.updateName();
+            */
             printInventory();
             game = false;
         }
@@ -136,16 +148,17 @@ public class firstGame {
         System.out.println("-----[ Inventory ]-----");
     }
 
-    public static void encounter(int eLevel){
+    public static void encounter(int eLevel) throws InterruptedException{
         String action;
-        String spellAction = null; // set to null as I have not yet implemented spell attacks
+        String spellAction = null;
+        int spellDamage = 0;
         System.out.println("An enemy approcahes");
         createEnemy(eLevel); //creates a level 1 enemy
         combat = true;
         while(combat){
             System.out.println("Press 'a' to use a melee attack.\n\nPress 'r' to use a ranged attack. *(Remember - some races dont have a ranged attck\nbe sure to check if your race does.");
             if (race.equals("Sorcerer")) {
-                System.out.println("Type 'spells' for a list of spells.");
+                System.out.println("Press 's' for a list of spells.");
             }
             System.out.print("» ");
             action = input.next();
@@ -153,6 +166,13 @@ public class firstGame {
                 combat = attack(false);
             }else if (action.charAt(0) == 'r') {
                 combat = attack(true);
+            } else if (action.charAt(0) == 's') {
+                System.out.println("Press 'f' for Fireball");
+                System.out.println("» ");
+                spellAction = input.next();
+                if (spellAction.charAt(0) == 'f') {
+                    combat = spellAttack(Dice.d4());
+                }
             }
                 if (!combat) {
                     switch(level){

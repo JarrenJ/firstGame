@@ -17,8 +17,8 @@ public class Dice {
          return 1 + random.nextInt(max);
     }
 
-    public static void d4(){
-        roll(4);
+    public static int d4(){
+        return roll(4);
     }
 
     public static void d6(){
