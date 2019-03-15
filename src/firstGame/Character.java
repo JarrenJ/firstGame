@@ -100,17 +100,31 @@ public class Character {
         return true;
         }
 
-    public static boolean spellAttack(int spellDamage) throws InterruptedException{
-        if (mana >= 0){
-            mana = mana - 5;
-            System.out.println("Rolling a D4 to determine Fireball Damage...");
-            Thread.sleep(1000);
-            enemyHp = enemyHp - spellDamage;
-            damage = spellDamage;
+    public static boolean spellAttack(String spellType, int spellDamage) throws InterruptedException{
+        if (mana > 0){
+            switch(spellType){
+                case "fireball":
+                    mana = mana - 5;
+                    System.out.println("Rolling a D4 to determine Fireball Damage...");
+                    Thread.sleep(1000);
+                    enemyHp = enemyHp - spellDamage;
+                    damage = spellDamage;
+                    System.out.println("Current Mana: " + mana);
+                    break;
+                case "cure wounds":
+                    mana = mana - 5;
+                    System.out.println("Rolling a D4 to determine Health to restore...");
+                    Thread.sleep(1000);
+                    playerHp = playerHp + spellDamage;
+                    System.out.println("You restored " + spellDamage + " health!");
+                    System.out.println("Current Mana: " + mana);
+                    return true;
+            }
         }
+
         if (enemyHp <= 0) {
-            System.out.println("You Won!");
-            return false;
+        System.out.println("You Won!");
+        return false;
         } else {
             System.out.println("You dealt " + damage + " damage!\nThe enemy has " + enemyHp + " health left \nGet back in there and fight!");
         }

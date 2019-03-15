@@ -17,9 +17,8 @@ public class Item extends Object {
         ID = newID;
     }
 
-    public void updateName(){
-        name = "";
-        name = type + " " + name;
+    public void setName(String itemName){
+        name = itemName;
     }
 
     public void setDamage(double newDamage){

@@ -47,30 +47,35 @@ public class firstGame {
         for (int i = 0; i < races.size(); i++) {
             System.out.println("[" + i + "]" + races.get(i));
         }
-        System.out.print("» ");
-        raceSelection = stdin.nextInt();
 
-        switch(raceSelection){
-            case 0:
-                createArcher();
-                break;
-            case 1:
-                createSorcerer();
-                break;
-            case 2:
-                createBarbarian();
-                break;
-            default:
-                System.out.println("Error selecting class");
-                break;
-        }
+        do {
+            System.out.print("» ");
+            raceSelection = stdin.nextInt();
+            switch(raceSelection){
+                case 0:
+                    createArcher();
+                    break;
+                case 1:
+                    createSorcerer();
+                    break;
+                case 2:
+                    createBarbarian();
+                    break;
+                default:
+                    System.out.println("Error selecting class");
+                    continue;
+            }
+            break;
+        } while (true);
 
+        /*
         do {
             System.out.println("Tutorial:");
             System.out.println("Enter the command '/stats'.");
             System.out.print("» ");
             input = stdin.next();
         } while (input.compareTo("/stats") != 0);
+        */
         stats();
 
         System.out.println("\nYou can use other commands to help you on your journey.\nThese can be found by typing in '/help'.\n");
@@ -117,10 +122,11 @@ public class firstGame {
 
             loadInstance.instance(2);
 
+            System.out.println("You can rest with '/rest'.");
             do {
                 System.out.print("» ");
                 input = stdin.next();
-            }while(!input.equals("/rest"));
+            } while (!input.equals("/rest"));
             System.out.println();
             System.out.println("You haven't slept this well in a long time. You wake up and something happens...");
             Thread.sleep(1000);
@@ -128,12 +134,11 @@ public class firstGame {
             System.out.println("You leveled up!");
             Character.checkLevelUp();
             System.out.println("Your wooden sword was upgraded to an Iron sword!");
-            /*
+            String[] newItem = new String[2];
             sword.setType("Iron");
             String itemName = sword.getName();
-            itemName.split(" ");
-            sword.updateName();
-            */
+            newItem = itemName.split(" ");
+            sword.setName(sword.getType() + " " + newItem[1]);
             printInventory();
             game = false;
         }
@@ -156,9 +161,9 @@ public class firstGame {
         createEnemy(eLevel); //creates a level 1 enemy
         combat = true;
         while(combat){
-            System.out.println("Press 'a' to use a melee attack.\n\nPress 'r' to use a ranged attack. *(Remember - some races dont have a ranged attck\nbe sure to check if your race does.");
+            System.out.println("Press 'a' to use a melee attack.\n\nPress 'r' to use a ranged attack. *(Remember - some races dont have a ranged attack\nbe sure to check if your race does.");
             if (race.equals("Sorcerer")) {
-                System.out.println("Press 's' for a list of spells.");
+                System.out.println("Press 's' for a list of spells. *once you press 's' you can no longer use 'a' or 'r'");
             }
             System.out.print("» ");
             action = input.next();
@@ -167,11 +172,14 @@ public class firstGame {
             }else if (action.charAt(0) == 'r') {
                 combat = attack(true);
             } else if (action.charAt(0) == 's') {
-                System.out.println("Press 'f' for Fireball");
+                System.out.println("Press 'f' for Fireball *roll a D4 [1 - 4 damage]");
+                System.out.println("Press 'c' for Cure Wounds *roll a D4 [1 - 4 health is restored]");
                 System.out.println("» ");
                 spellAction = input.next();
                 if (spellAction.charAt(0) == 'f') {
-                    combat = spellAttack(Dice.d4());
+                    combat = spellAttack("fireball", Dice.d4());
+                }else if (spellAction.charAt(0) == 'c'){
+                    combat = spellAttack("cure wounds", Dice.d4());
                 }
             }
                 if (!combat) {
@@ -195,7 +203,6 @@ public class firstGame {
                 }
                 enemyAttack();
         }
-
     }
 
 }

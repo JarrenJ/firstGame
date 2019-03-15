@@ -3,16 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="44e15ada-a0eb-44be-a1d2-c1d080b75594" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/instances/2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/instances/2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/firstGame/firstGame/Character.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/firstGame/firstGame/Character.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/firstGame/firstGame/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/firstGame/firstGame/Item.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/firstGame/firstGame/firstGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/firstGame/firstGame/firstGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/firstGame/firstGame/loadInstance.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/firstGame/firstGame/loadInstance.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/firstGame/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/firstGame/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/firstGame/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/firstGame/Dice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/firstGame/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/firstGame/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/firstGame/firstGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/firstGame/firstGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/firstGame/loadInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/firstGame/loadInstance.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,12 +18,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/firstGame/firstGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="174" column="17" lean-forward="true" selection-start-line="174" selection-start-column="17" selection-end-line="174" selection-end-column="17" />
+            <state relative-caret-position="487">
+              <caret line="193" column="40" lean-forward="true" selection-start-line="193" selection-start-column="40" selection-end-line="193" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#printInventory#0;class#firstGame#0" />
@@ -39,59 +35,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/firstGame/Character.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1005">
-              <caret line="112" column="25" lean-forward="true" selection-start-line="112" selection-start-column="25" selection-end-line="112" selection-end-column="25" />
+            <state relative-caret-position="532">
+              <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
               <folding>
                 <element signature="method#stats#0;class#Character#0" />
                 <element signature="method#createArcher#0;class#Character#0" />
                 <element signature="method#createSorcerer#0;class#Character#0" />
                 <element signature="method#createBarbarian#0;class#Character#0" />
                 <element signature="method#enemyAttack#0;class#Character#0" />
+                <element signature="method#attack#0;class#Character#0" />
+                <element signature="method#spellAttack#0;class#Character#0" />
                 <element signature="method#checkLevelUp#0;class#Character#0" />
                 <element signature="method#createEnemy#0;class#Character#0" />
                 <element signature="method#name#0;class#Character#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/firstGame/Item.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="36" selection-start-line="36" selection-end-line="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/firstGame/ItemCollection.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/firstGame/Dice.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-              <folding>
-                <element signature="e#0#803#0" expanded="true" />
-                <element signature="e#443#444#0" expanded="true" />
-                <element signature="e#466#467#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/firstGame/loadInstance.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="42" column="1" lean-forward="true" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -126,23 +83,23 @@
         <option value="$PROJECT_DIR$/src/firstGame/ItemCollection.java" />
         <option value="$PROJECT_DIR$/src/firstGame/Backpack.java" />
         <option value="$PROJECT_DIR$/src/firstGame/loadInstance.java" />
-        <option value="$PROJECT_DIR$/src/firstGame/Item.java" />
         <option value="$PROJECT_DIR$/src/firstGame/Dice.java" />
+        <option value="$PROJECT_DIR$/src/firstGame/Item.java" />
         <option value="$PROJECT_DIR$/src/firstGame/Character.java" />
         <option value="$PROJECT_DIR$/src/firstGame/firstGame.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
     <option name="width" value="3440" />
-    <option name="height" value="1440" />
+    <option name="height" value="1333" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -151,27 +108,17 @@
               <item name="firstGame" type="b2602c69:ProjectViewProjectNode" />
               <item name="firstGame" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="firstGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="firstGame" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="firstGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="firstGame" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="firstGame" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552581897602" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552619816465" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -219,18 +166,19 @@
       <workItem from="1552321322737" duration="165000" />
       <workItem from="1552406416166" duration="3767000" />
       <workItem from="1552489558499" duration="2193000" />
-      <workItem from="1552579344840" duration="2465000" />
+      <workItem from="1552579344840" duration="3019000" />
+      <workItem from="1552613881119" duration="3606000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10278000" />
+    <option name="totallyTimeSpent" value="14438000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="3440" height="1440" extended-state="0" />
+    <frame x="0" y="23" width="3440" height="1333" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2610359" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26250735" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -239,7 +187,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32846716" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32796133" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -249,7 +197,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32959184" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32876712" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -288,13 +236,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/firstGame/Item.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/firstGame/Dice.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -307,16 +248,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/firstGame/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+          <folding>
+            <element signature="e#445#446#0" expanded="true" />
+            <element signature="e#471#472#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/firstGame/Character.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1005">
-          <caret line="112" column="25" lean-forward="true" selection-start-line="112" selection-start-column="25" selection-end-line="112" selection-end-column="25" />
+        <state relative-caret-position="532">
+          <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
           <folding>
             <element signature="method#stats#0;class#Character#0" />
             <element signature="method#createArcher#0;class#Character#0" />
             <element signature="method#createSorcerer#0;class#Character#0" />
             <element signature="method#createBarbarian#0;class#Character#0" />
             <element signature="method#enemyAttack#0;class#Character#0" />
+            <element signature="method#attack#0;class#Character#0" />
+            <element signature="method#spellAttack#0;class#Character#0" />
             <element signature="method#checkLevelUp#0;class#Character#0" />
             <element signature="method#createEnemy#0;class#Character#0" />
             <element signature="method#name#0;class#Character#0" />
@@ -326,8 +280,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/firstGame/firstGame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="174" column="17" lean-forward="true" selection-start-line="174" selection-start-column="17" selection-end-line="174" selection-end-column="17" />
+        <state relative-caret-position="487">
+          <caret line="193" column="40" lean-forward="true" selection-start-line="193" selection-start-column="40" selection-end-line="193" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#printInventory#0;class#firstGame#0" />
